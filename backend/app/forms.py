@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, FloatField, IntegerField, DateField
+from wtforms import StringField, FloatField, IntegerField, DateField, PasswordField
 from wtforms.validators import DataRequired, Email, Length, Optional
 
 class ProductForm(FlaskForm):
@@ -18,3 +18,7 @@ class SaleForm(FlaskForm):
     customer_id = IntegerField('Customer ID', validators=[DataRequired()])
     sale_date = DateField('Sale Date', validators=[DataRequired()])
     amount = FloatField('Amount', validators=[DataRequired()])
+
+class LoginForm(FlaskForm):
+    username = StringField('Username', validators=[DataRequired()])
+    password = PasswordField('Password', validators=[DataRequired(), Length(min=6)])
