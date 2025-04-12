@@ -1,5 +1,5 @@
 from flask import Flask
-from .extensions import db, login_manager, cors
+from .app.extensions import db, login_manager, cors
 
 def create_app():
     app = Flask(__name__)
@@ -11,8 +11,8 @@ def create_app():
     login_manager.init_app(app)
     
     # Register blueprints
-    from .routes import api_blueprint
-    from .github.webhooks import github_blueprint
+    from .app.routes import api_blueprint
+    from .app.github.webhooks import github_blueprint
     app.register_blueprint(api_blueprint)
     app.register_blueprint(github_blueprint)
     
