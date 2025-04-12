@@ -34,3 +34,5 @@ npm run dev
 
 ## License
 MIT
+
+[![GitHub Marketplace](https://img.shields.io/badge/GitHub-Marketplace-blue)](https://github.com/marketplace/your-app-name)
